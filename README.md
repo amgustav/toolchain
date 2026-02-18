@@ -1,12 +1,12 @@
-# Forge
+# Toolchain
 
 A collection of small, fine-tuned function-calling models built to run cheaply in agent loops.
 
 ## Problem
-Frontier models like GPT-4 are expensive for high-volume agent loops. Small models are cheaper but struggle with reliable function calling. Forge fixes that.
+Frontier models like GPT-4 are expensive for high-volume agent loops. Small models are cheaper but struggle with reliable function calling. Toolchain fixes that.
 
 ## Models
-- [forge-qwen2.5-3b-function-calling](https://huggingface.co/amgustav/forge-qwen2.5-3b-function-calling) — Qwen2.5-3B fine-tuned on function calling
+- [toolchain-qwen2.5-3b](https://huggingface.co/amgustav/forge-qwen2.5-3b-function-calling) — Qwen2.5-3B fine-tuned on function calling
 
 ## Demo
 Try it: [huggingface.co/spaces/amgustav/forge-qwen2.5-3b-function-calling](https://huggingface.co/spaces/amgustav/forge-qwen2.5-3b-function-calling)

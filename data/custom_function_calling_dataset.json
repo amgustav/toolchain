@@ -1,0 +1,802 @@
+[
+  {
+    "conversations": [
+      {
+        "from": "system",
+        "value": "You are a function calling AI model. You are provided with function signatures within <tools> </tools> XML tags.\n<tools>\n[{\"type\": \"function\", \"function\": {\"name\": \"search_restaurants\", \"description\": \"Search for restaurants by cuisine, location, and Michelin status.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"location\": {\"type\": \"string\"}, \"michelin_rated\": {\"type\": \"boolean\"}, \"cuisine\": {\"type\": \"string\"}}, \"required\": [\"location\"]}}}, {\"type\": \"function\", \"function\": {\"name\": \"check_availability\", \"description\": \"Check restaurant availability for a given date and party size.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"restaurant_id\": {\"type\": \"string\"}, \"date\": {\"type\": \"string\"}, \"party_size\": {\"type\": \"integer\"}}, \"required\": [\"restaurant_id\", \"date\", \"party_size\"]}}}]\n</tools>"
+      },
+      {
+        "from": "human",
+        "value": "Find me a Michelin restaurant available tonight for 2 people in Stockholm."
+      },
+      {
+        "from": "gpt",
+        "value": "<tool_call>\n{\"name\": \"search_restaurants\", \"arguments\": {\"location\": \"Stockholm\", \"michelin_rated\": true}}\n</tool_call>\n<tool_call>\n{\"name\": \"check_availability\", \"arguments\": {\"restaurant_id\": \"results[0].id\", \"date\": \"tonight\", \"party_size\": 2}}\n</tool_call>"
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "system",
+        "value": "You are a function calling AI model. You are provided with function signatures within <tools> </tools> XML tags.\n<tools>\n[{\"type\": \"function\", \"function\": {\"name\": \"search_restaurants\", \"description\": \"Search for restaurants by cuisine, location, and Michelin status.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"location\": {\"type\": \"string\"}, \"michelin_rated\": {\"type\": \"boolean\"}, \"cuisine\": {\"type\": \"string\"}}, \"required\": [\"location\"]}}}, {\"type\": \"function\", \"function\": {\"name\": \"check_availability\", \"description\": \"Check restaurant availability for a given date and party size.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"restaurant_id\": {\"type\": \"string\"}, \"date\": {\"type\": \"string\"}, \"party_size\": {\"type\": \"integer\"}}, \"required\": [\"restaurant_id\", \"date\", \"party_size\"]}}}]\n</tools>"
+      },
+      {
+        "from": "human",
+        "value": "Find me a Michelin restaurant available tonight for 2 people in London."
+      },
+      {
+        "from": "gpt",
+        "value": "<tool_call>\n{\"name\": \"search_restaurants\", \"arguments\": {\"location\": \"London\", \"michelin_rated\": true}}\n</tool_call>\n<tool_call>\n{\"name\": \"check_availability\", \"arguments\": {\"restaurant_id\": \"results[0].id\", \"date\": \"tonight\", \"party_size\": 2}}\n</tool_call>"
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "system",
+        "value": "You are a function calling AI model. You are provided with function signatures within <tools> </tools> XML tags.\n<tools>\n[{\"type\": \"function\", \"function\": {\"name\": \"search_restaurants\", \"description\": \"Search for restaurants by cuisine, location, and Michelin status.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"location\": {\"type\": \"string\"}, \"michelin_rated\": {\"type\": \"boolean\"}, \"cuisine\": {\"type\": \"string\"}}, \"required\": [\"location\"]}}}, {\"type\": \"function\", \"function\": {\"name\": \"check_availability\", \"description\": \"Check restaurant availability for a given date and party size.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"restaurant_id\": {\"type\": \"string\"}, \"date\": {\"type\": \"string\"}, \"party_size\": {\"type\": \"integer\"}}, \"required\": [\"restaurant_id\", \"date\", \"party_size\"]}}}]\n</tools>"
+      },
+      {
+        "from": "human",
+        "value": "Find me a Michelin restaurant available tonight for 2 people in Tokyo."
+      },
+      {
+        "from": "gpt",
+        "value": "<tool_call>\n{\"name\": \"search_restaurants\", \"arguments\": {\"location\": \"Tokyo\", \"michelin_rated\": true}}\n</tool_call>\n<tool_call>\n{\"name\": \"check_availability\", \"arguments\": {\"restaurant_id\": \"results[0].id\", \"date\": \"tonight\", \"party_size\": 2}}\n</tool_call>"
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "system",
+        "value": "You are a function calling AI model. You are provided with function signatures within <tools> </tools> XML tags.\n<tools>\n[{\"type\": \"function\", \"function\": {\"name\": \"search_restaurants\", \"description\": \"Search for restaurants by cuisine, location, and Michelin status.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"location\": {\"type\": \"string\"}, \"michelin_rated\": {\"type\": \"boolean\"}, \"cuisine\": {\"type\": \"string\"}}, \"required\": [\"location\"]}}}, {\"type\": \"function\", \"function\": {\"name\": \"check_availability\", \"description\": \"Check restaurant availability for a given date and party size.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"restaurant_id\": {\"type\": \"string\"}, \"date\": {\"type\": \"string\"}, \"party_size\": {\"type\": \"integer\"}}, \"required\": [\"restaurant_id\", \"date\", \"party_size\"]}}}]\n</tools>"
+      },
+      {
+        "from": "human",
+        "value": "Find me a Michelin restaurant available tonight for 2 people in New York."
+      },
+      {
+        "from": "gpt",
+        "value": "<tool_call>\n{\"name\": \"search_restaurants\", \"arguments\": {\"location\": \"New York\", \"michelin_rated\": true}}\n</tool_call>\n<tool_call>\n{\"name\": \"check_availability\", \"arguments\": {\"restaurant_id\": \"results[0].id\", \"date\": \"tonight\", \"party_size\": 2}}\n</tool_call>"
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "system",
+        "value": "You are a function calling AI model. You are provided with function signatures within <tools> </tools> XML tags.\n<tools>\n[{\"type\": \"function\", \"function\": {\"name\": \"search_restaurants\", \"description\": \"Search for restaurants by cuisine, location, and Michelin status.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"location\": {\"type\": \"string\"}, \"michelin_rated\": {\"type\": \"boolean\"}, \"cuisine\": {\"type\": \"string\"}}, \"required\": [\"location\"]}}}, {\"type\": \"function\", \"function\": {\"name\": \"check_availability\", \"description\": \"Check restaurant availability for a given date and party size.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"restaurant_id\": {\"type\": \"string\"}, \"date\": {\"type\": \"string\"}, \"party_size\": {\"type\": \"integer\"}}, \"required\": [\"restaurant_id\", \"date\", \"party_size\"]}}}]\n</tools>"
+      },
+      {
+        "from": "human",
+        "value": "Find me a Michelin restaurant available tonight for 2 people in Barcelona."
+      },
+      {
+        "from": "gpt",
+        "value": "<tool_call>\n{\"name\": \"search_restaurants\", \"arguments\": {\"location\": \"Barcelona\", \"michelin_rated\": true}}\n</tool_call>\n<tool_call>\n{\"name\": \"check_availability\", \"arguments\": {\"restaurant_id\": \"results[0].id\", \"date\": \"tonight\", \"party_size\": 2}}\n</tool_call>"
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "system",
+        "value": "You are a function calling AI model. You are provided with function signatures within <tools> </tools> XML tags.\n<tools>\n[{\"type\": \"function\", \"function\": {\"name\": \"search_restaurants\", \"description\": \"Search for restaurants by cuisine, location, and Michelin status.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"location\": {\"type\": \"string\"}, \"michelin_rated\": {\"type\": \"boolean\"}, \"cuisine\": {\"type\": \"string\"}}, \"required\": [\"location\"]}}}, {\"type\": \"function\", \"function\": {\"name\": \"check_availability\", \"description\": \"Check restaurant availability for a given date and party size.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"restaurant_id\": {\"type\": \"string\"}, \"date\": {\"type\": \"string\"}, \"party_size\": {\"type\": \"integer\"}}, \"required\": [\"restaurant_id\", \"date\", \"party_size\"]}}}]\n</tools>"
+      },
+      {
+        "from": "human",
+        "value": "Find me a Michelin restaurant available tonight for 2 people in Amsterdam."
+      },
+      {
+        "from": "gpt",
+        "value": "<tool_call>\n{\"name\": \"search_restaurants\", \"arguments\": {\"location\": \"Amsterdam\", \"michelin_rated\": true}}\n</tool_call>\n<tool_call>\n{\"name\": \"check_availability\", \"arguments\": {\"restaurant_id\": \"results[0].id\", \"date\": \"tonight\", \"party_size\": 2}}\n</tool_call>"
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "system",
+        "value": "You are a function calling AI model. You are provided with function signatures within <tools> </tools> XML tags.\n<tools>\n[{\"type\": \"function\", \"function\": {\"name\": \"search_restaurants\", \"description\": \"Search for restaurants by cuisine, location, and Michelin status.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"location\": {\"type\": \"string\"}, \"michelin_rated\": {\"type\": \"boolean\"}, \"cuisine\": {\"type\": \"string\"}}, \"required\": [\"location\"]}}}, {\"type\": \"function\", \"function\": {\"name\": \"check_availability\", \"description\": \"Check restaurant availability for a given date and party size.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"restaurant_id\": {\"type\": \"string\"}, \"date\": {\"type\": \"string\"}, \"party_size\": {\"type\": \"integer\"}}, \"required\": [\"restaurant_id\", \"date\", \"party_size\"]}}}]\n</tools>"
+      },
+      {
+        "from": "human",
+        "value": "Find me a Michelin restaurant available tonight for 2 people in Paris."
+      },
+      {
+        "from": "gpt",
+        "value": "<tool_call>\n{\"name\": \"search_restaurants\", \"arguments\": {\"location\": \"Paris\", \"michelin_rated\": true}}\n</tool_call>\n<tool_call>\n{\"name\": \"check_availability\", \"arguments\": {\"restaurant_id\": \"results[0].id\", \"date\": \"tonight\", \"party_size\": 2}}\n</tool_call>"
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "system",
+        "value": "You are a function calling AI model. You are provided with function signatures within <tools> </tools> XML tags.\n<tools>\n[{\"type\": \"function\", \"function\": {\"name\": \"search_restaurants\", \"description\": \"Search for restaurants by cuisine, location, and Michelin status.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"location\": {\"type\": \"string\"}, \"michelin_rated\": {\"type\": \"boolean\"}, \"cuisine\": {\"type\": \"string\"}}, \"required\": [\"location\"]}}}, {\"type\": \"function\", \"function\": {\"name\": \"check_availability\", \"description\": \"Check restaurant availability for a given date and party size.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"restaurant_id\": {\"type\": \"string\"}, \"date\": {\"type\": \"string\"}, \"party_size\": {\"type\": \"integer\"}}, \"required\": [\"restaurant_id\", \"date\", \"party_size\"]}}}]\n</tools>"
+      },
+      {
+        "from": "human",
+        "value": "Find me a Michelin restaurant available tonight for 2 people in Berlin."
+      },
+      {
+        "from": "gpt",
+        "value": "<tool_call>\n{\"name\": \"search_restaurants\", \"arguments\": {\"location\": \"Berlin\", \"michelin_rated\": true}}\n</tool_call>\n<tool_call>\n{\"name\": \"check_availability\", \"arguments\": {\"restaurant_id\": \"results[0].id\", \"date\": \"tonight\", \"party_size\": 2}}\n</tool_call>"
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "system",
+        "value": "You are a function calling AI model. You are provided with function signatures within <tools> </tools> XML tags.\n<tools>\n[{\"type\": \"function\", \"function\": {\"name\": \"search_restaurants\", \"description\": \"Search for restaurants by cuisine, location, and Michelin status.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"location\": {\"type\": \"string\"}, \"michelin_rated\": {\"type\": \"boolean\"}, \"cuisine\": {\"type\": \"string\"}}, \"required\": [\"location\"]}}}, {\"type\": \"function\", \"function\": {\"name\": \"check_availability\", \"description\": \"Check restaurant availability for a given date and party size.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"restaurant_id\": {\"type\": \"string\"}, \"date\": {\"type\": \"string\"}, \"party_size\": {\"type\": \"integer\"}}, \"required\": [\"restaurant_id\", \"date\", \"party_size\"]}}}]\n</tools>"
+      },
+      {
+        "from": "human",
+        "value": "Find me a Michelin restaurant available tonight for 2 people in Singapore."
+      },
+      {
+        "from": "gpt",
+        "value": "<tool_call>\n{\"name\": \"search_restaurants\", \"arguments\": {\"location\": \"Singapore\", \"michelin_rated\": true}}\n</tool_call>\n<tool_call>\n{\"name\": \"check_availability\", \"arguments\": {\"restaurant_id\": \"results[0].id\", \"date\": \"tonight\", \"party_size\": 2}}\n</tool_call>"
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "system",
+        "value": "You are a function calling AI model. You are provided with function signatures within <tools> </tools> XML tags.\n<tools>\n[{\"type\": \"function\", \"function\": {\"name\": \"search_restaurants\", \"description\": \"Search for restaurants by cuisine, location, and Michelin status.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"location\": {\"type\": \"string\"}, \"michelin_rated\": {\"type\": \"boolean\"}, \"cuisine\": {\"type\": \"string\"}}, \"required\": [\"location\"]}}}, {\"type\": \"function\", \"function\": {\"name\": \"check_availability\", \"description\": \"Check restaurant availability for a given date and party size.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"restaurant_id\": {\"type\": \"string\"}, \"date\": {\"type\": \"string\"}, \"party_size\": {\"type\": \"integer\"}}, \"required\": [\"restaurant_id\", \"date\", \"party_size\"]}}}]\n</tools>"
+      },
+      {
+        "from": "human",
+        "value": "Find me a Michelin restaurant available tonight for 2 people in Sydney."
+      },
+      {
+        "from": "gpt",
+        "value": "<tool_call>\n{\"name\": \"search_restaurants\", \"arguments\": {\"location\": \"Sydney\", \"michelin_rated\": true}}\n</tool_call>\n<tool_call>\n{\"name\": \"check_availability\", \"arguments\": {\"restaurant_id\": \"results[0].id\", \"date\": \"tonight\", \"party_size\": 2}}\n</tool_call>"
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "system",
+        "value": "You are a function calling AI model. You are provided with function signatures within <tools> </tools> XML tags.\n<tools>\n[{\"type\": \"function\", \"function\": {\"name\": \"search_restaurants\", \"description\": \"Search for restaurants by cuisine, location, and Michelin status.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"location\": {\"type\": \"string\"}, \"michelin_rated\": {\"type\": \"boolean\"}, \"cuisine\": {\"type\": \"string\"}}, \"required\": [\"location\"]}}}, {\"type\": \"function\", \"function\": {\"name\": \"check_availability\", \"description\": \"Check restaurant availability for a given date and party size.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"restaurant_id\": {\"type\": \"string\"}, \"date\": {\"type\": \"string\"}, \"party_size\": {\"type\": \"integer\"}}, \"required\": [\"restaurant_id\", \"date\", \"party_size\"]}}}]\n</tools>"
+      },
+      {
+        "from": "human",
+        "value": "Find me a Michelin restaurant available tonight for 2 people in San Francisco."
+      },
+      {
+        "from": "gpt",
+        "value": "<tool_call>\n{\"name\": \"search_restaurants\", \"arguments\": {\"location\": \"San Francisco\", \"michelin_rated\": true}}\n</tool_call>\n<tool_call>\n{\"name\": \"check_availability\", \"arguments\": {\"restaurant_id\": \"results[0].id\", \"date\": \"tonight\", \"party_size\": 2}}\n</tool_call>"
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "system",
+        "value": "You are a function calling AI model. You are provided with function signatures within <tools> </tools> XML tags.\n<tools>\n[{\"type\": \"function\", \"function\": {\"name\": \"search_restaurants\", \"description\": \"Search for restaurants by cuisine, location, and Michelin status.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"location\": {\"type\": \"string\"}, \"michelin_rated\": {\"type\": \"boolean\"}, \"cuisine\": {\"type\": \"string\"}}, \"required\": [\"location\"]}}}, {\"type\": \"function\", \"function\": {\"name\": \"check_availability\", \"description\": \"Check restaurant availability for a given date and party size.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"restaurant_id\": {\"type\": \"string\"}, \"date\": {\"type\": \"string\"}, \"party_size\": {\"type\": \"integer\"}}, \"required\": [\"restaurant_id\", \"date\", \"party_size\"]}}}]\n</tools>"
+      },
+      {
+        "from": "human",
+        "value": "Find me a Michelin restaurant available tonight for 2 people in Zurich."
+      },
+      {
+        "from": "gpt",
+        "value": "<tool_call>\n{\"name\": \"search_restaurants\", \"arguments\": {\"location\": \"Zurich\", \"michelin_rated\": true}}\n</tool_call>\n<tool_call>\n{\"name\": \"check_availability\", \"arguments\": {\"restaurant_id\": \"results[0].id\", \"date\": \"tonight\", \"party_size\": 2}}\n</tool_call>"
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "system",
+        "value": "You are a function calling AI model. You are provided with function signatures within <tools> </tools> XML tags.\n<tools>\n[{\"type\": \"function\", \"function\": {\"name\": \"search_restaurants\", \"description\": \"Search for restaurants by cuisine, location, and Michelin status.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"location\": {\"type\": \"string\"}, \"michelin_rated\": {\"type\": \"boolean\"}, \"cuisine\": {\"type\": \"string\"}}, \"required\": [\"location\"]}}}, {\"type\": \"function\", \"function\": {\"name\": \"check_availability\", \"description\": \"Check restaurant availability for a given date and party size.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"restaurant_id\": {\"type\": \"string\"}, \"date\": {\"type\": \"string\"}, \"party_size\": {\"type\": \"integer\"}}, \"required\": [\"restaurant_id\", \"date\", \"party_size\"]}}}]\n</tools>"
+      },
+      {
+        "from": "human",
+        "value": "Find me a Michelin restaurant available tonight for 2 people in Tel Aviv."
+      },
+      {
+        "from": "gpt",
+        "value": "<tool_call>\n{\"name\": \"search_restaurants\", \"arguments\": {\"location\": \"Tel Aviv\", \"michelin_rated\": true}}\n</tool_call>\n<tool_call>\n{\"name\": \"check_availability\", \"arguments\": {\"restaurant_id\": \"results[0].id\", \"date\": \"tonight\", \"party_size\": 2}}\n</tool_call>"
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "system",
+        "value": "You are a function calling AI model. You are provided with function signatures within <tools> </tools> XML tags.\n<tools>\n[{\"type\": \"function\", \"function\": {\"name\": \"search_restaurants\", \"description\": \"Search for restaurants by cuisine, location, and menu items.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"location\": {\"type\": \"string\"}, \"menu_item\": {\"type\": \"string\"}, \"cuisine\": {\"type\": \"string\"}}, \"required\": [\"location\"]}}}]\n</tools>"
+      },
+      {
+        "from": "human",
+        "value": "Find all restaurants in Stockholm with wagyu on the menu."
+      },
+      {
+        "from": "gpt",
+        "value": "<tool_call>\n{\"name\": \"search_restaurants\", \"arguments\": {\"location\": \"Stockholm\", \"menu_item\": \"wagyu\"}}\n</tool_call>"
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "system",
+        "value": "You are a function calling AI model. You are provided with function signatures within <tools> </tools> XML tags.\n<tools>\n[{\"type\": \"function\", \"function\": {\"name\": \"search_restaurants\", \"description\": \"Search for restaurants by cuisine, location, and menu items.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"location\": {\"type\": \"string\"}, \"menu_item\": {\"type\": \"string\"}, \"cuisine\": {\"type\": \"string\"}}, \"required\": [\"location\"]}}}]\n</tools>"
+      },
+      {
+        "from": "human",
+        "value": "Find all restaurants in London with wagyu on the menu."
+      },
+      {
+        "from": "gpt",
+        "value": "<tool_call>\n{\"name\": \"search_restaurants\", \"arguments\": {\"location\": \"London\", \"menu_item\": \"wagyu\"}}\n</tool_call>"
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "system",
+        "value": "You are a function calling AI model. You are provided with function signatures within <tools> </tools> XML tags.\n<tools>\n[{\"type\": \"function\", \"function\": {\"name\": \"search_restaurants\", \"description\": \"Search for restaurants by cuisine, location, and menu items.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"location\": {\"type\": \"string\"}, \"menu_item\": {\"type\": \"string\"}, \"cuisine\": {\"type\": \"string\"}}, \"required\": [\"location\"]}}}]\n</tools>"
+      },
+      {
+        "from": "human",
+        "value": "Find all restaurants in Tokyo with wagyu on the menu."
+      },
+      {
+        "from": "gpt",
+        "value": "<tool_call>\n{\"name\": \"search_restaurants\", \"arguments\": {\"location\": \"Tokyo\", \"menu_item\": \"wagyu\"}}\n</tool_call>"
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "system",
+        "value": "You are a function calling AI model. You are provided with function signatures within <tools> </tools> XML tags.\n<tools>\n[{\"type\": \"function\", \"function\": {\"name\": \"search_restaurants\", \"description\": \"Search for restaurants by cuisine, location, and menu items.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"location\": {\"type\": \"string\"}, \"menu_item\": {\"type\": \"string\"}, \"cuisine\": {\"type\": \"string\"}}, \"required\": [\"location\"]}}}]\n</tools>"
+      },
+      {
+        "from": "human",
+        "value": "Find all restaurants in New York with wagyu on the menu."
+      },
+      {
+        "from": "gpt",
+        "value": "<tool_call>\n{\"name\": \"search_restaurants\", \"arguments\": {\"location\": \"New York\", \"menu_item\": \"wagyu\"}}\n</tool_call>"
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "system",
+        "value": "You are a function calling AI model. You are provided with function signatures within <tools> </tools> XML tags.\n<tools>\n[{\"type\": \"function\", \"function\": {\"name\": \"search_restaurants\", \"description\": \"Search for restaurants by cuisine, location, and menu items.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"location\": {\"type\": \"string\"}, \"menu_item\": {\"type\": \"string\"}, \"cuisine\": {\"type\": \"string\"}}, \"required\": [\"location\"]}}}]\n</tools>"
+      },
+      {
+        "from": "human",
+        "value": "Find all restaurants in Barcelona with wagyu on the menu."
+      },
+      {
+        "from": "gpt",
+        "value": "<tool_call>\n{\"name\": \"search_restaurants\", \"arguments\": {\"location\": \"Barcelona\", \"menu_item\": \"wagyu\"}}\n</tool_call>"
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "system",
+        "value": "You are a function calling AI model. You are provided with function signatures within <tools> </tools> XML tags.\n<tools>\n[{\"type\": \"function\", \"function\": {\"name\": \"search_restaurants\", \"description\": \"Search for restaurants by cuisine, location, and menu items.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"location\": {\"type\": \"string\"}, \"menu_item\": {\"type\": \"string\"}, \"cuisine\": {\"type\": \"string\"}}, \"required\": [\"location\"]}}}]\n</tools>"
+      },
+      {
+        "from": "human",
+        "value": "Find all restaurants in Amsterdam with wagyu on the menu."
+      },
+      {
+        "from": "gpt",
+        "value": "<tool_call>\n{\"name\": \"search_restaurants\", \"arguments\": {\"location\": \"Amsterdam\", \"menu_item\": \"wagyu\"}}\n</tool_call>"
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "system",
+        "value": "You are a function calling AI model. You are provided with function signatures within <tools> </tools> XML tags.\n<tools>\n[{\"type\": \"function\", \"function\": {\"name\": \"search_restaurants\", \"description\": \"Search for restaurants by cuisine, location, and menu items.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"location\": {\"type\": \"string\"}, \"menu_item\": {\"type\": \"string\"}, \"cuisine\": {\"type\": \"string\"}}, \"required\": [\"location\"]}}}]\n</tools>"
+      },
+      {
+        "from": "human",
+        "value": "Find all restaurants in Paris with wagyu on the menu."
+      },
+      {
+        "from": "gpt",
+        "value": "<tool_call>\n{\"name\": \"search_restaurants\", \"arguments\": {\"location\": \"Paris\", \"menu_item\": \"wagyu\"}}\n</tool_call>"
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "system",
+        "value": "You are a function calling AI model. You are provided with function signatures within <tools> </tools> XML tags.\n<tools>\n[{\"type\": \"function\", \"function\": {\"name\": \"search_restaurants\", \"description\": \"Search for restaurants by cuisine, location, and menu items.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"location\": {\"type\": \"string\"}, \"menu_item\": {\"type\": \"string\"}, \"cuisine\": {\"type\": \"string\"}}, \"required\": [\"location\"]}}}]\n</tools>"
+      },
+      {
+        "from": "human",
+        "value": "Find all restaurants in Berlin with wagyu on the menu."
+      },
+      {
+        "from": "gpt",
+        "value": "<tool_call>\n{\"name\": \"search_restaurants\", \"arguments\": {\"location\": \"Berlin\", \"menu_item\": \"wagyu\"}}\n</tool_call>"
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "system",
+        "value": "You are a function calling AI model. You are provided with function signatures within <tools> </tools> XML tags.\n<tools>\n[{\"type\": \"function\", \"function\": {\"name\": \"search_restaurants\", \"description\": \"Search for restaurants by cuisine, location, and menu items.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"location\": {\"type\": \"string\"}, \"menu_item\": {\"type\": \"string\"}, \"cuisine\": {\"type\": \"string\"}}, \"required\": [\"location\"]}}}]\n</tools>"
+      },
+      {
+        "from": "human",
+        "value": "Find all restaurants in Singapore with wagyu on the menu."
+      },
+      {
+        "from": "gpt",
+        "value": "<tool_call>\n{\"name\": \"search_restaurants\", \"arguments\": {\"location\": \"Singapore\", \"menu_item\": \"wagyu\"}}\n</tool_call>"
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "system",
+        "value": "You are a function calling AI model. You are provided with function signatures within <tools> </tools> XML tags.\n<tools>\n[{\"type\": \"function\", \"function\": {\"name\": \"search_restaurants\", \"description\": \"Search for restaurants by cuisine, location, and menu items.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"location\": {\"type\": \"string\"}, \"menu_item\": {\"type\": \"string\"}, \"cuisine\": {\"type\": \"string\"}}, \"required\": [\"location\"]}}}]\n</tools>"
+      },
+      {
+        "from": "human",
+        "value": "Find all restaurants in Sydney with wagyu on the menu."
+      },
+      {
+        "from": "gpt",
+        "value": "<tool_call>\n{\"name\": \"search_restaurants\", \"arguments\": {\"location\": \"Sydney\", \"menu_item\": \"wagyu\"}}\n</tool_call>"
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "system",
+        "value": "You are a function calling AI model. You are provided with function signatures within <tools> </tools> XML tags.\n<tools>\n[{\"type\": \"function\", \"function\": {\"name\": \"search_restaurants\", \"description\": \"Search for restaurants by cuisine, location, and menu items.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"location\": {\"type\": \"string\"}, \"menu_item\": {\"type\": \"string\"}, \"cuisine\": {\"type\": \"string\"}}, \"required\": [\"location\"]}}}]\n</tools>"
+      },
+      {
+        "from": "human",
+        "value": "Find all restaurants in San Francisco with wagyu on the menu."
+      },
+      {
+        "from": "gpt",
+        "value": "<tool_call>\n{\"name\": \"search_restaurants\", \"arguments\": {\"location\": \"San Francisco\", \"menu_item\": \"wagyu\"}}\n</tool_call>"
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "system",
+        "value": "You are a function calling AI model. You are provided with function signatures within <tools> </tools> XML tags.\n<tools>\n[{\"type\": \"function\", \"function\": {\"name\": \"search_restaurants\", \"description\": \"Search for restaurants by cuisine, location, and menu items.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"location\": {\"type\": \"string\"}, \"menu_item\": {\"type\": \"string\"}, \"cuisine\": {\"type\": \"string\"}}, \"required\": [\"location\"]}}}]\n</tools>"
+      },
+      {
+        "from": "human",
+        "value": "Find all restaurants in Zurich with wagyu on the menu."
+      },
+      {
+        "from": "gpt",
+        "value": "<tool_call>\n{\"name\": \"search_restaurants\", \"arguments\": {\"location\": \"Zurich\", \"menu_item\": \"wagyu\"}}\n</tool_call>"
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "system",
+        "value": "You are a function calling AI model. You are provided with function signatures within <tools> </tools> XML tags.\n<tools>\n[{\"type\": \"function\", \"function\": {\"name\": \"search_restaurants\", \"description\": \"Search for restaurants by cuisine, location, and menu items.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"location\": {\"type\": \"string\"}, \"menu_item\": {\"type\": \"string\"}, \"cuisine\": {\"type\": \"string\"}}, \"required\": [\"location\"]}}}]\n</tools>"
+      },
+      {
+        "from": "human",
+        "value": "Find all restaurants in Tel Aviv with wagyu on the menu."
+      },
+      {
+        "from": "gpt",
+        "value": "<tool_call>\n{\"name\": \"search_restaurants\", \"arguments\": {\"location\": \"Tel Aviv\", \"menu_item\": \"wagyu\"}}\n</tool_call>"
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "system",
+        "value": "You are a function calling AI model. You are provided with function signatures within <tools> </tools> XML tags.\n<tools>\n[{\"type\": \"function\", \"function\": {\"name\": \"search_flights\", \"description\": \"Search for flights by origin, dates, and budget.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"origin\": {\"type\": \"string\"}, \"departure_date\": {\"type\": \"string\"}, \"return_date\": {\"type\": \"string\"}, \"max_price\": {\"type\": \"integer\"}, \"climate\": {\"type\": \"string\"}}, \"required\": [\"origin\", \"departure_date\"]}}}, {\"type\": \"function\", \"function\": {\"name\": \"search_coworking\", \"description\": \"Find coworking spaces in a city.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"city\": {\"type\": \"string\"}, \"min_rating\": {\"type\": \"number\"}}, \"required\": [\"city\"]}}}]\n</tools>"
+      },
+      {
+        "from": "human",
+        "value": "I'm free next weekend, flying from Stockholm \u2014 find me the best flight deal to somewhere warm with a great co-working scene."
+      },
+      {
+        "from": "gpt",
+        "value": "<tool_call>\n{\"name\": \"search_flights\", \"arguments\": {\"origin\": \"Stockholm\", \"departure_date\": \"next Saturday\", \"return_date\": \"next Sunday\", \"climate\": \"warm\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"search_coworking\", \"arguments\": {\"city\": \"results[0].destination\", \"min_rating\": 4.0}}\n</tool_call>"
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "system",
+        "value": "You are a function calling AI model. You are provided with function signatures within <tools> </tools> XML tags.\n<tools>\n[{\"type\": \"function\", \"function\": {\"name\": \"search_flights\", \"description\": \"Search for flights by origin, dates, and budget.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"origin\": {\"type\": \"string\"}, \"departure_date\": {\"type\": \"string\"}, \"return_date\": {\"type\": \"string\"}, \"max_price\": {\"type\": \"integer\"}, \"climate\": {\"type\": \"string\"}}, \"required\": [\"origin\", \"departure_date\"]}}}, {\"type\": \"function\", \"function\": {\"name\": \"search_coworking\", \"description\": \"Find coworking spaces in a city.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"city\": {\"type\": \"string\"}, \"min_rating\": {\"type\": \"number\"}}, \"required\": [\"city\"]}}}]\n</tools>"
+      },
+      {
+        "from": "human",
+        "value": "I'm free next weekend, flying from London \u2014 find me the best flight deal to somewhere warm with a great co-working scene."
+      },
+      {
+        "from": "gpt",
+        "value": "<tool_call>\n{\"name\": \"search_flights\", \"arguments\": {\"origin\": \"London\", \"departure_date\": \"next Saturday\", \"return_date\": \"next Sunday\", \"climate\": \"warm\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"search_coworking\", \"arguments\": {\"city\": \"results[0].destination\", \"min_rating\": 4.0}}\n</tool_call>"
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "system",
+        "value": "You are a function calling AI model. You are provided with function signatures within <tools> </tools> XML tags.\n<tools>\n[{\"type\": \"function\", \"function\": {\"name\": \"search_flights\", \"description\": \"Search for flights by origin, dates, and budget.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"origin\": {\"type\": \"string\"}, \"departure_date\": {\"type\": \"string\"}, \"return_date\": {\"type\": \"string\"}, \"max_price\": {\"type\": \"integer\"}, \"climate\": {\"type\": \"string\"}}, \"required\": [\"origin\", \"departure_date\"]}}}, {\"type\": \"function\", \"function\": {\"name\": \"search_coworking\", \"description\": \"Find coworking spaces in a city.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"city\": {\"type\": \"string\"}, \"min_rating\": {\"type\": \"number\"}}, \"required\": [\"city\"]}}}]\n</tools>"
+      },
+      {
+        "from": "human",
+        "value": "I'm free next weekend, flying from New York \u2014 find me the best flight deal to somewhere warm with a great co-working scene."
+      },
+      {
+        "from": "gpt",
+        "value": "<tool_call>\n{\"name\": \"search_flights\", \"arguments\": {\"origin\": \"New York\", \"departure_date\": \"next Saturday\", \"return_date\": \"next Sunday\", \"climate\": \"warm\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"search_coworking\", \"arguments\": {\"city\": \"results[0].destination\", \"min_rating\": 4.0}}\n</tool_call>"
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "system",
+        "value": "You are a function calling AI model. You are provided with function signatures within <tools> </tools> XML tags.\n<tools>\n[{\"type\": \"function\", \"function\": {\"name\": \"search_flights\", \"description\": \"Search for flights by origin, dates, and budget.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"origin\": {\"type\": \"string\"}, \"departure_date\": {\"type\": \"string\"}, \"return_date\": {\"type\": \"string\"}, \"max_price\": {\"type\": \"integer\"}, \"climate\": {\"type\": \"string\"}}, \"required\": [\"origin\", \"departure_date\"]}}}, {\"type\": \"function\", \"function\": {\"name\": \"search_coworking\", \"description\": \"Find coworking spaces in a city.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"city\": {\"type\": \"string\"}, \"min_rating\": {\"type\": \"number\"}}, \"required\": [\"city\"]}}}]\n</tools>"
+      },
+      {
+        "from": "human",
+        "value": "I'm free next weekend, flying from Berlin \u2014 find me the best flight deal to somewhere warm with a great co-working scene."
+      },
+      {
+        "from": "gpt",
+        "value": "<tool_call>\n{\"name\": \"search_flights\", \"arguments\": {\"origin\": \"Berlin\", \"departure_date\": \"next Saturday\", \"return_date\": \"next Sunday\", \"climate\": \"warm\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"search_coworking\", \"arguments\": {\"city\": \"results[0].destination\", \"min_rating\": 4.0}}\n</tool_call>"
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "system",
+        "value": "You are a function calling AI model. You are provided with function signatures within <tools> </tools> XML tags.\n<tools>\n[{\"type\": \"function\", \"function\": {\"name\": \"search_flights\", \"description\": \"Search for flights by origin, dates, and budget.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"origin\": {\"type\": \"string\"}, \"departure_date\": {\"type\": \"string\"}, \"return_date\": {\"type\": \"string\"}, \"max_price\": {\"type\": \"integer\"}, \"climate\": {\"type\": \"string\"}}, \"required\": [\"origin\", \"departure_date\"]}}}, {\"type\": \"function\", \"function\": {\"name\": \"search_coworking\", \"description\": \"Find coworking spaces in a city.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"city\": {\"type\": \"string\"}, \"min_rating\": {\"type\": \"number\"}}, \"required\": [\"city\"]}}}]\n</tools>"
+      },
+      {
+        "from": "human",
+        "value": "I'm free next weekend, flying from Amsterdam \u2014 find me the best flight deal to somewhere warm with a great co-working scene."
+      },
+      {
+        "from": "gpt",
+        "value": "<tool_call>\n{\"name\": \"search_flights\", \"arguments\": {\"origin\": \"Amsterdam\", \"departure_date\": \"next Saturday\", \"return_date\": \"next Sunday\", \"climate\": \"warm\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"search_coworking\", \"arguments\": {\"city\": \"results[0].destination\", \"min_rating\": 4.0}}\n</tool_call>"
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "system",
+        "value": "You are a function calling AI model. You are provided with function signatures within <tools> </tools> XML tags.\n<tools>\n[{\"type\": \"function\", \"function\": {\"name\": \"search_flights\", \"description\": \"Search for flights by origin, dates, and budget.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"origin\": {\"type\": \"string\"}, \"departure_date\": {\"type\": \"string\"}, \"return_date\": {\"type\": \"string\"}, \"max_price\": {\"type\": \"integer\"}, \"climate\": {\"type\": \"string\"}}, \"required\": [\"origin\", \"departure_date\"]}}}, {\"type\": \"function\", \"function\": {\"name\": \"search_coworking\", \"description\": \"Find coworking spaces in a city.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"city\": {\"type\": \"string\"}, \"min_rating\": {\"type\": \"number\"}}, \"required\": [\"city\"]}}}]\n</tools>"
+      },
+      {
+        "from": "human",
+        "value": "I'm free next weekend, flying from Paris \u2014 find me the best flight deal to somewhere warm with a great co-working scene."
+      },
+      {
+        "from": "gpt",
+        "value": "<tool_call>\n{\"name\": \"search_flights\", \"arguments\": {\"origin\": \"Paris\", \"departure_date\": \"next Saturday\", \"return_date\": \"next Sunday\", \"climate\": \"warm\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"search_coworking\", \"arguments\": {\"city\": \"results[0].destination\", \"min_rating\": 4.0}}\n</tool_call>"
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "system",
+        "value": "You are a function calling AI model. You are provided with function signatures within <tools> </tools> XML tags.\n<tools>\n[{\"type\": \"function\", \"function\": {\"name\": \"search_flights\", \"description\": \"Search for flights by origin, dates, and budget.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"origin\": {\"type\": \"string\"}, \"departure_date\": {\"type\": \"string\"}, \"return_date\": {\"type\": \"string\"}, \"max_price\": {\"type\": \"integer\"}, \"climate\": {\"type\": \"string\"}}, \"required\": [\"origin\", \"departure_date\"]}}}, {\"type\": \"function\", \"function\": {\"name\": \"search_coworking\", \"description\": \"Find coworking spaces in a city.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"city\": {\"type\": \"string\"}, \"min_rating\": {\"type\": \"number\"}}, \"required\": [\"city\"]}}}]\n</tools>"
+      },
+      {
+        "from": "human",
+        "value": "I'm free next weekend, flying from San Francisco \u2014 find me the best flight deal to somewhere warm with a great co-working scene."
+      },
+      {
+        "from": "gpt",
+        "value": "<tool_call>\n{\"name\": \"search_flights\", \"arguments\": {\"origin\": \"San Francisco\", \"departure_date\": \"next Saturday\", \"return_date\": \"next Sunday\", \"climate\": \"warm\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"search_coworking\", \"arguments\": {\"city\": \"results[0].destination\", \"min_rating\": 4.0}}\n</tool_call>"
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "system",
+        "value": "You are a function calling AI model. You are provided with function signatures within <tools> </tools> XML tags.\n<tools>\n[{\"type\": \"function\", \"function\": {\"name\": \"search_flights\", \"description\": \"Search for flights by origin, dates, and budget.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"origin\": {\"type\": \"string\"}, \"departure_date\": {\"type\": \"string\"}, \"return_date\": {\"type\": \"string\"}, \"max_price\": {\"type\": \"integer\"}, \"climate\": {\"type\": \"string\"}}, \"required\": [\"origin\", \"departure_date\"]}}}, {\"type\": \"function\", \"function\": {\"name\": \"search_coworking\", \"description\": \"Find coworking spaces in a city.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"city\": {\"type\": \"string\"}, \"min_rating\": {\"type\": \"number\"}}, \"required\": [\"city\"]}}}]\n</tools>"
+      },
+      {
+        "from": "human",
+        "value": "I'm free next weekend, flying from Sydney \u2014 find me the best flight deal to somewhere warm with a great co-working scene."
+      },
+      {
+        "from": "gpt",
+        "value": "<tool_call>\n{\"name\": \"search_flights\", \"arguments\": {\"origin\": \"Sydney\", \"departure_date\": \"next Saturday\", \"return_date\": \"next Sunday\", \"climate\": \"warm\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"search_coworking\", \"arguments\": {\"city\": \"results[0].destination\", \"min_rating\": 4.0}}\n</tool_call>"
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "system",
+        "value": "You are a function calling AI model. You are provided with function signatures within <tools> </tools> XML tags.\n<tools>\n[{\"type\": \"function\", \"function\": {\"name\": \"search_flights\", \"description\": \"Search for flights by origin, dates, and budget.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"origin\": {\"type\": \"string\"}, \"departure_date\": {\"type\": \"string\"}, \"return_date\": {\"type\": \"string\"}, \"max_price\": {\"type\": \"integer\"}, \"climate\": {\"type\": \"string\"}}, \"required\": [\"origin\", \"departure_date\"]}}}, {\"type\": \"function\", \"function\": {\"name\": \"search_coworking\", \"description\": \"Find coworking spaces in a city.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"city\": {\"type\": \"string\"}, \"min_rating\": {\"type\": \"number\"}}, \"required\": [\"city\"]}}}]\n</tools>"
+      },
+      {
+        "from": "human",
+        "value": "I'm free next weekend, flying from Singapore \u2014 find me the best flight deal to somewhere warm with a great co-working scene."
+      },
+      {
+        "from": "gpt",
+        "value": "<tool_call>\n{\"name\": \"search_flights\", \"arguments\": {\"origin\": \"Singapore\", \"departure_date\": \"next Saturday\", \"return_date\": \"next Sunday\", \"climate\": \"warm\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"search_coworking\", \"arguments\": {\"city\": \"results[0].destination\", \"min_rating\": 4.0}}\n</tool_call>"
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "system",
+        "value": "You are a function calling AI model. You are provided with function signatures within <tools> </tools> XML tags.\n<tools>\n[{\"type\": \"function\", \"function\": {\"name\": \"search_flights\", \"description\": \"Search for flights by origin, dates, and budget.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"origin\": {\"type\": \"string\"}, \"departure_date\": {\"type\": \"string\"}, \"return_date\": {\"type\": \"string\"}, \"max_price\": {\"type\": \"integer\"}, \"climate\": {\"type\": \"string\"}}, \"required\": [\"origin\", \"departure_date\"]}}}, {\"type\": \"function\", \"function\": {\"name\": \"search_coworking\", \"description\": \"Find coworking spaces in a city.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"city\": {\"type\": \"string\"}, \"min_rating\": {\"type\": \"number\"}}, \"required\": [\"city\"]}}}]\n</tools>"
+      },
+      {
+        "from": "human",
+        "value": "I'm free next weekend, flying from Zurich \u2014 find me the best flight deal to somewhere warm with a great co-working scene."
+      },
+      {
+        "from": "gpt",
+        "value": "<tool_call>\n{\"name\": \"search_flights\", \"arguments\": {\"origin\": \"Zurich\", \"departure_date\": \"next Saturday\", \"return_date\": \"next Sunday\", \"climate\": \"warm\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"search_coworking\", \"arguments\": {\"city\": \"results[0].destination\", \"min_rating\": 4.0}}\n</tool_call>"
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "system",
+        "value": "You are a function calling AI model. You are provided with function signatures within <tools> </tools> XML tags.\n<tools>\n[{\"type\": \"function\", \"function\": {\"name\": \"search_flights\", \"description\": \"Search for flights by origin, dates, and budget.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"origin\": {\"type\": \"string\"}, \"departure_date\": {\"type\": \"string\"}, \"return_date\": {\"type\": \"string\"}, \"max_price\": {\"type\": \"integer\"}, \"climate\": {\"type\": \"string\"}}, \"required\": [\"origin\", \"departure_date\"]}}}, {\"type\": \"function\", \"function\": {\"name\": \"search_coworking\", \"description\": \"Find coworking spaces in a city.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"city\": {\"type\": \"string\"}, \"min_rating\": {\"type\": \"number\"}}, \"required\": [\"city\"]}}}]\n</tools>"
+      },
+      {
+        "from": "human",
+        "value": "I'm free next weekend, flying from Tel Aviv \u2014 find me the best flight deal to somewhere warm with a great co-working scene."
+      },
+      {
+        "from": "gpt",
+        "value": "<tool_call>\n{\"name\": \"search_flights\", \"arguments\": {\"origin\": \"Tel Aviv\", \"departure_date\": \"next Saturday\", \"return_date\": \"next Sunday\", \"climate\": \"warm\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"search_coworking\", \"arguments\": {\"city\": \"results[0].destination\", \"min_rating\": 4.0}}\n</tool_call>"
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "system",
+        "value": "You are a function calling AI model. You are provided with function signatures within <tools> </tools> XML tags.\n<tools>\n[{\"type\": \"function\", \"function\": {\"name\": \"get_weather\", \"description\": \"Get current weather for a city.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"city\": {\"type\": \"string\"}}, \"required\": [\"city\"]}}}, {\"type\": \"function\", \"function\": {\"name\": \"search_flights\", \"description\": \"Search for flights by origin and destination.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"origin\": {\"type\": \"string\"}, \"destination\": {\"type\": \"string\"}, \"departure_date\": {\"type\": \"string\"}}, \"required\": [\"origin\", \"destination\", \"departure_date\"]}}}]\n</tools>"
+      },
+      {
+        "from": "human",
+        "value": "What's the weather in Stockholm and book me a flight there from London."
+      },
+      {
+        "from": "gpt",
+        "value": "<tool_call>\n{\"name\": \"get_weather\", \"arguments\": {\"city\": \"Stockholm\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"search_flights\", \"arguments\": {\"origin\": \"London\", \"destination\": \"Stockholm\", \"departure_date\": \"next available\"}}\n</tool_call>"
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "system",
+        "value": "You are a function calling AI model. You are provided with function signatures within <tools> </tools> XML tags.\n<tools>\n[{\"type\": \"function\", \"function\": {\"name\": \"get_weather\", \"description\": \"Get current weather for a city.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"city\": {\"type\": \"string\"}}, \"required\": [\"city\"]}}}, {\"type\": \"function\", \"function\": {\"name\": \"search_flights\", \"description\": \"Search for flights by origin and destination.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"origin\": {\"type\": \"string\"}, \"destination\": {\"type\": \"string\"}, \"departure_date\": {\"type\": \"string\"}}, \"required\": [\"origin\", \"destination\", \"departure_date\"]}}}]\n</tools>"
+      },
+      {
+        "from": "human",
+        "value": "What's the weather in London and book me a flight there from London."
+      },
+      {
+        "from": "gpt",
+        "value": "<tool_call>\n{\"name\": \"get_weather\", \"arguments\": {\"city\": \"London\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"search_flights\", \"arguments\": {\"origin\": \"London\", \"destination\": \"London\", \"departure_date\": \"next available\"}}\n</tool_call>"
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "system",
+        "value": "You are a function calling AI model. You are provided with function signatures within <tools> </tools> XML tags.\n<tools>\n[{\"type\": \"function\", \"function\": {\"name\": \"get_weather\", \"description\": \"Get current weather for a city.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"city\": {\"type\": \"string\"}}, \"required\": [\"city\"]}}}, {\"type\": \"function\", \"function\": {\"name\": \"search_flights\", \"description\": \"Search for flights by origin and destination.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"origin\": {\"type\": \"string\"}, \"destination\": {\"type\": \"string\"}, \"departure_date\": {\"type\": \"string\"}}, \"required\": [\"origin\", \"destination\", \"departure_date\"]}}}]\n</tools>"
+      },
+      {
+        "from": "human",
+        "value": "What's the weather in New York and book me a flight there from London."
+      },
+      {
+        "from": "gpt",
+        "value": "<tool_call>\n{\"name\": \"get_weather\", \"arguments\": {\"city\": \"New York\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"search_flights\", \"arguments\": {\"origin\": \"London\", \"destination\": \"New York\", \"departure_date\": \"next available\"}}\n</tool_call>"
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "system",
+        "value": "You are a function calling AI model. You are provided with function signatures within <tools> </tools> XML tags.\n<tools>\n[{\"type\": \"function\", \"function\": {\"name\": \"get_weather\", \"description\": \"Get current weather for a city.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"city\": {\"type\": \"string\"}}, \"required\": [\"city\"]}}}, {\"type\": \"function\", \"function\": {\"name\": \"search_flights\", \"description\": \"Search for flights by origin and destination.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"origin\": {\"type\": \"string\"}, \"destination\": {\"type\": \"string\"}, \"departure_date\": {\"type\": \"string\"}}, \"required\": [\"origin\", \"destination\", \"departure_date\"]}}}]\n</tools>"
+      },
+      {
+        "from": "human",
+        "value": "What's the weather in Berlin and book me a flight there from London."
+      },
+      {
+        "from": "gpt",
+        "value": "<tool_call>\n{\"name\": \"get_weather\", \"arguments\": {\"city\": \"Berlin\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"search_flights\", \"arguments\": {\"origin\": \"London\", \"destination\": \"Berlin\", \"departure_date\": \"next available\"}}\n</tool_call>"
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "system",
+        "value": "You are a function calling AI model. You are provided with function signatures within <tools> </tools> XML tags.\n<tools>\n[{\"type\": \"function\", \"function\": {\"name\": \"get_weather\", \"description\": \"Get current weather for a city.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"city\": {\"type\": \"string\"}}, \"required\": [\"city\"]}}}, {\"type\": \"function\", \"function\": {\"name\": \"search_flights\", \"description\": \"Search for flights by origin and destination.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"origin\": {\"type\": \"string\"}, \"destination\": {\"type\": \"string\"}, \"departure_date\": {\"type\": \"string\"}}, \"required\": [\"origin\", \"destination\", \"departure_date\"]}}}]\n</tools>"
+      },
+      {
+        "from": "human",
+        "value": "What's the weather in Amsterdam and book me a flight there from London."
+      },
+      {
+        "from": "gpt",
+        "value": "<tool_call>\n{\"name\": \"get_weather\", \"arguments\": {\"city\": \"Amsterdam\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"search_flights\", \"arguments\": {\"origin\": \"London\", \"destination\": \"Amsterdam\", \"departure_date\": \"next available\"}}\n</tool_call>"
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "system",
+        "value": "You are a function calling AI model. You are provided with function signatures within <tools> </tools> XML tags.\n<tools>\n[{\"type\": \"function\", \"function\": {\"name\": \"get_weather\", \"description\": \"Get current weather for a city.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"city\": {\"type\": \"string\"}}, \"required\": [\"city\"]}}}, {\"type\": \"function\", \"function\": {\"name\": \"search_flights\", \"description\": \"Search for flights by origin and destination.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"origin\": {\"type\": \"string\"}, \"destination\": {\"type\": \"string\"}, \"departure_date\": {\"type\": \"string\"}}, \"required\": [\"origin\", \"destination\", \"departure_date\"]}}}]\n</tools>"
+      },
+      {
+        "from": "human",
+        "value": "What's the weather in Paris and book me a flight there from London."
+      },
+      {
+        "from": "gpt",
+        "value": "<tool_call>\n{\"name\": \"get_weather\", \"arguments\": {\"city\": \"Paris\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"search_flights\", \"arguments\": {\"origin\": \"London\", \"destination\": \"Paris\", \"departure_date\": \"next available\"}}\n</tool_call>"
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "system",
+        "value": "You are a function calling AI model. You are provided with function signatures within <tools> </tools> XML tags.\n<tools>\n[{\"type\": \"function\", \"function\": {\"name\": \"get_weather\", \"description\": \"Get current weather for a city.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"city\": {\"type\": \"string\"}}, \"required\": [\"city\"]}}}, {\"type\": \"function\", \"function\": {\"name\": \"search_flights\", \"description\": \"Search for flights by origin and destination.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"origin\": {\"type\": \"string\"}, \"destination\": {\"type\": \"string\"}, \"departure_date\": {\"type\": \"string\"}}, \"required\": [\"origin\", \"destination\", \"departure_date\"]}}}]\n</tools>"
+      },
+      {
+        "from": "human",
+        "value": "What's the weather in San Francisco and book me a flight there from London."
+      },
+      {
+        "from": "gpt",
+        "value": "<tool_call>\n{\"name\": \"get_weather\", \"arguments\": {\"city\": \"San Francisco\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"search_flights\", \"arguments\": {\"origin\": \"London\", \"destination\": \"San Francisco\", \"departure_date\": \"next available\"}}\n</tool_call>"
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "system",
+        "value": "You are a function calling AI model. You are provided with function signatures within <tools> </tools> XML tags.\n<tools>\n[{\"type\": \"function\", \"function\": {\"name\": \"get_weather\", \"description\": \"Get current weather for a city.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"city\": {\"type\": \"string\"}}, \"required\": [\"city\"]}}}, {\"type\": \"function\", \"function\": {\"name\": \"search_flights\", \"description\": \"Search for flights by origin and destination.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"origin\": {\"type\": \"string\"}, \"destination\": {\"type\": \"string\"}, \"departure_date\": {\"type\": \"string\"}}, \"required\": [\"origin\", \"destination\", \"departure_date\"]}}}]\n</tools>"
+      },
+      {
+        "from": "human",
+        "value": "What's the weather in Sydney and book me a flight there from London."
+      },
+      {
+        "from": "gpt",
+        "value": "<tool_call>\n{\"name\": \"get_weather\", \"arguments\": {\"city\": \"Sydney\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"search_flights\", \"arguments\": {\"origin\": \"London\", \"destination\": \"Sydney\", \"departure_date\": \"next available\"}}\n</tool_call>"
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "system",
+        "value": "You are a function calling AI model. You are provided with function signatures within <tools> </tools> XML tags.\n<tools>\n[{\"type\": \"function\", \"function\": {\"name\": \"get_weather\", \"description\": \"Get current weather for a city.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"city\": {\"type\": \"string\"}}, \"required\": [\"city\"]}}}, {\"type\": \"function\", \"function\": {\"name\": \"search_flights\", \"description\": \"Search for flights by origin and destination.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"origin\": {\"type\": \"string\"}, \"destination\": {\"type\": \"string\"}, \"departure_date\": {\"type\": \"string\"}}, \"required\": [\"origin\", \"destination\", \"departure_date\"]}}}]\n</tools>"
+      },
+      {
+        "from": "human",
+        "value": "What's the weather in Singapore and book me a flight there from London."
+      },
+      {
+        "from": "gpt",
+        "value": "<tool_call>\n{\"name\": \"get_weather\", \"arguments\": {\"city\": \"Singapore\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"search_flights\", \"arguments\": {\"origin\": \"London\", \"destination\": \"Singapore\", \"departure_date\": \"next available\"}}\n</tool_call>"
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "system",
+        "value": "You are a function calling AI model. You are provided with function signatures within <tools> </tools> XML tags.\n<tools>\n[{\"type\": \"function\", \"function\": {\"name\": \"get_weather\", \"description\": \"Get current weather for a city.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"city\": {\"type\": \"string\"}}, \"required\": [\"city\"]}}}, {\"type\": \"function\", \"function\": {\"name\": \"search_flights\", \"description\": \"Search for flights by origin and destination.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"origin\": {\"type\": \"string\"}, \"destination\": {\"type\": \"string\"}, \"departure_date\": {\"type\": \"string\"}}, \"required\": [\"origin\", \"destination\", \"departure_date\"]}}}]\n</tools>"
+      },
+      {
+        "from": "human",
+        "value": "What's the weather in Zurich and book me a flight there from London."
+      },
+      {
+        "from": "gpt",
+        "value": "<tool_call>\n{\"name\": \"get_weather\", \"arguments\": {\"city\": \"Zurich\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"search_flights\", \"arguments\": {\"origin\": \"London\", \"destination\": \"Zurich\", \"departure_date\": \"next available\"}}\n</tool_call>"
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "system",
+        "value": "You are a function calling AI model. You are provided with function signatures within <tools> </tools> XML tags.\n<tools>\n[{\"type\": \"function\", \"function\": {\"name\": \"get_weather\", \"description\": \"Get current weather for a city.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"city\": {\"type\": \"string\"}}, \"required\": [\"city\"]}}}, {\"type\": \"function\", \"function\": {\"name\": \"search_flights\", \"description\": \"Search for flights by origin and destination.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"origin\": {\"type\": \"string\"}, \"destination\": {\"type\": \"string\"}, \"departure_date\": {\"type\": \"string\"}}, \"required\": [\"origin\", \"destination\", \"departure_date\"]}}}]\n</tools>"
+      },
+      {
+        "from": "human",
+        "value": "What's the weather in Tel Aviv and book me a flight there from London."
+      },
+      {
+        "from": "gpt",
+        "value": "<tool_call>\n{\"name\": \"get_weather\", \"arguments\": {\"city\": \"Tel Aviv\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"search_flights\", \"arguments\": {\"origin\": \"London\", \"destination\": \"Tel Aviv\", \"departure_date\": \"next available\"}}\n</tool_call>"
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "system",
+        "value": "You are a function calling AI model. You are provided with function signatures within <tools> </tools> XML tags.\n<tools>\n[{\"type\": \"function\", \"function\": {\"name\": \"get_weather\", \"description\": \"Get current weather for a city.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"city\": {\"type\": \"string\"}}, \"required\": [\"city\"]}}}, {\"type\": \"function\", \"function\": {\"name\": \"search_flights\", \"description\": \"Search for flights by origin and destination.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"origin\": {\"type\": \"string\"}, \"destination\": {\"type\": \"string\"}, \"departure_date\": {\"type\": \"string\"}}, \"required\": [\"origin\", \"destination\", \"departure_date\"]}}}]\n</tools>"
+      },
+      {
+        "from": "human",
+        "value": "What's the weather in Tokyo and book me a flight there from London."
+      },
+      {
+        "from": "gpt",
+        "value": "<tool_call>\n{\"name\": \"get_weather\", \"arguments\": {\"city\": \"Tokyo\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"search_flights\", \"arguments\": {\"origin\": \"London\", \"destination\": \"Tokyo\", \"departure_date\": \"next available\"}}\n</tool_call>"
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "system",
+        "value": "You are a function calling AI model. You are provided with function signatures within <tools> </tools> XML tags.\n<tools>\n[{\"type\": \"function\", \"function\": {\"name\": \"get_weather\", \"description\": \"Get current weather for a city.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"city\": {\"type\": \"string\"}}, \"required\": [\"city\"]}}}, {\"type\": \"function\", \"function\": {\"name\": \"search_flights\", \"description\": \"Search for flights by origin and destination.\", \"parameters\": {\"type\": \"object\", \"properties\": {\"origin\": {\"type\": \"string\"}, \"destination\": {\"type\": \"string\"}, \"departure_date\": {\"type\": \"string\"}}, \"required\": [\"origin\", \"destination\", \"departure_date\"]}}}]\n</tools>"
+      },
+      {
+        "from": "human",
+        "value": "What's the weather in Barcelona and book me a flight there from London."
+      },
+      {
+        "from": "gpt",
+        "value": "<tool_call>\n{\"name\": \"get_weather\", \"arguments\": {\"city\": \"Barcelona\"}}\n</tool_call>\n<tool_call>\n{\"name\": \"search_flights\", \"arguments\": {\"origin\": \"London\", \"destination\": \"Barcelona\", \"departure_date\": \"next available\"}}\n</tool_call>"
+      }
+    ]
+  }
+]
